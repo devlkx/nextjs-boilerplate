@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Todo 应用
 
-## Getting Started
+本项目基于 Next.js 15 + React 19 + Tailwind v4，主页实现了一个功能完整的 Todo 应用（增 / 删 / 改 / 查、完成状态切换、过滤、本地存储持久化）。
 
-First, run the development server:
+### 本地启动
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开浏览器访问 `http://localhost:3000` 体验 Todo 应用。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 功能说明
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 添加 Todo：在输入框输入内容，按 Enter 或点击 Add
+- 查看列表：主页展示所有任务
+- 更新 Todo：
+  - 切换完成状态：勾选复选框
+  - 编辑内容：点击 Edit，修改后 Enter 或点击 Save 保存，Esc 或 Cancel 取消
+- 删除 Todo：点击 Delete
+- 过滤：顶部筛选 All / Active / Completed
+- 清除已完成：点击 Clear completed
+- 持久化：自动使用 `localStorage` 保存任务
 
-## Learn More
+### 代码入口
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 页面组件：`app/page.tsx`
